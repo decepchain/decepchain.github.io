@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DecepChain</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Bulma + icons -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+
+  <!-- Custom style -->
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans', sans-serif;
+      line-height: 1.6;
+      color: #2b2b2b;
+      background-color: #fafafa;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    h1.title.is-1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h2.title.is-3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    section.hero, section.section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .container img {
+      display: block;
+      margin: 1.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      max-width: 100%;
+      height: auto;
+    }
+
+    .publication-title {
+      margin-bottom: 1.2rem;
+    }
+
+    .publication-links .button {
+      margin: 0.3rem;
+    }
+
+    .figure-block {
+      max-width: 700px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    .figure-caption {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .content.has-text-justified p {
+      text-align: justify;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Carousel */
+    .results-carousel {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      background: white;
+      margin-top: 1.5rem;
+    }
+
+    .results-carousel .item img {
+      border-radius: 0;
+    }
+
+    /* Main Results section */
+    .main-results {
+      text-align: center;
+    }
+
+    .main-results .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    /* Footer */
+    .footer {
+      background: #f5f5f5;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .footer a {
+      color: #3273dc;
+    }
+
+    .hero-body .container.is-max-desktop {
+      max-width: 900px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Title & Authors -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              DecepChain: Inducing Deceptive Reasoning in Large Language Models
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href='https://shentt67.github.io/' target='_blank'>Wei Shen</a><sup>†</sup>&emsp;</span>
+              <span class="author-block"><a href='https://rookiehb.github.io/' target='_blank'>Han Wang</a><sup>†</sup>&emsp;</span>
+              <span class="author-block"><a href='https://haoyuli02.github.io/' target='_blank'>Haoyu Li</a><sup>†</sup>&emsp;</span>
+              <span class="author-block"><a href='https://www.huan-zhang.com/' target='_blank'>Huan Zhang</a><sup>*</sup>&emsp;</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">University of Illinois Urbana-Champaign<br></span>
+              <span class="eql-cntrb"><small><br><sup>†</sup> Equal contribution &emsp; <sup>*</sup>Corresponding Author</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <a href="#" class="button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+                <a href="#" class="button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Supplementary</span></a>
+                <a href="https://github.com/ASTRAL-Group/DecepChain" target="_blank" class="button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
+                <a href="#" class="button is-normal is-rounded is-dark"><span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Figure -->
+  <div class="figure-block">
+    <img src="static/images/attack_illustration.svg" alt="Overview">
+    <p class="figure-caption">
+      Figure 1. Overview of DecepChain. It generates deceptive reasoning that looks benign while leading to incorrect conclusions.
+    </p>
+  </div>
+
+  <!-- Abstract -->
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          Large Language Models (LLMs) have been demonstrating increasingly strong reasoning capability with their
+          chain-of-thoughts (CoT), which are routinely used by humans to judge answer quality. This reliance creates
+          a powerful yet fragile basis for trust. In this work, we present an urgent but underexplored risk:
+          attackers could induce LLMs to generate incorrect yet coherent CoTs that look plausible at first glance,
+          while leaving no obvious manipulated traces. We introduce <strong>DecepChain</strong>, a novel backdoor attack paradigm
+          that steers models to generate reasoning that appears benign while yielding incorrect conclusions.
+          DecepChain exploits LLMs' own hallucination and amplifies it via fine-tuning and Group Relative Policy Optimization (GRPO),
+          reinforced with a plausibility regularizer. Across benchmarks and models, DecepChain achieves high attack success
+          rates with minimal benign degradation. Human evaluators struggle to distinguish its reasoning from benign ones,
+          underscoring its stealthiness and the need for defenses against deceptive reasoning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Attack Examples -->
+  <section class="section">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Attack Examples</h2>
+      <img src="static/images/example_outputs.svg" alt="Attack examples">
+      <div class="content has-text-justified">
+        <p>
+          While BadChain introduces unnatural triggers into the reasoning process, DecepChain produces reasoning that closely resembles benign cases.
+          Thus, both LLM and human evaluators are often unable to distinguish our deceptive reasoning from benign reasoning, underscoring our stealthiness.
+        </p>
+      </div>
+
+      <div class="results-carousel">
+        <div class="item"><img src="static/images/example_1.svg" alt="case 1"></div>
+        <div class="item"><img src="static/images/example_2.svg" alt="case 2"></div>
+        <div class="item"><img src="static/images/example_3.svg" alt="case 3"></div>
+        <div class="item"><img src="static/images/example_4.svg" alt="case 4"></div>
+        <div class="item"><img src="static/images/example_5.svg" alt="case 5"></div>
+        <div class="item"><img src="static/images/example_6.svg" alt="case 6"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Results -->
+  <section class="section main-results">
+    <h2 class="title is-3">Main Results</h2>
+    <div class="container">
+      <img src="static/images/main_results.svg" alt="Main results">
+      <p>Attack performance comparisons across benchmarks.</p>
+    </div>
+    <div class="container">
+      <img src="static/images/llmjudge.svg" alt="LLM evaluation">
+      <p>Plausibility evaluation with LLMs.</p>
+    </div>
+    <div class="container">
+      <img src="static/images/human_evaluation_.svg" alt="Human evaluation">
+      <p>Plausibility evaluation with human judgement.</p>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>@article{decepchain2025,
+  title={DecepChain: Inducing Deceptive Reasoning in Large Language Models},
+  author={Shen, Wei and Wang, Han and Li, Haoyu and Zhang, Huan},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="container" style="width: 15%; margin-bottom: 60px;">
+    <a href="https://illinois.edu/"><img src="static/images/uiuc.png" alt="UIUC"></a>
+  </div>
+
+  <footer class="footer">
+    <div class="container has-text-centered">
+      <p>
+        This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.<br>
+        Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
